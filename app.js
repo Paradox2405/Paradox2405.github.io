@@ -264,17 +264,29 @@
   function openProject(id) {
     const p = D.projects.find((x) => x.id === id); if (!p) return;
     const links = p.links.map((l) => `<a class="btn ${/visit/i.test(l.label) ? "btn-primary" : "btn-ghost"}" href="${l.url}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("");
+    const list = (arr) => `<ul class="hl">${arr.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>`;
+    const facts = [
+      ["Role", p.role],
+      ["Type", `${kindLabel[p.kind]} · ${typeLabel[p.type]}`],
+      ["Year", p.year],
+      ["Status", p.status],
+    ].filter(([, v]) => v);
     $("#modal-body").innerHTML = `
       <button class="close" aria-label="Close" data-close>×</button>
       ${cover(p, true)}
       <div class="modal-content">
-        <div class="card-meta"><span>${kindLabel[p.kind]} · ${typeLabel[p.type]}</span><span>${esc(p.year)}</span></div>
+        <p class="modal-tagline">${esc(p.tagline)}</p>
         <h2 id="modal-title">${esc(p.title)}</h2>
-        <p>${esc(p.summary)}</p>
-        <h4>Highlights</h4>
-        <ul class="hl">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
-        <h4>Built with</h4>
-        <div class="tags">${p.stack.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</div>
+        <dl class="mfacts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+        <div class="msection overview">${(p.overview || [p.summary]).map((t) => `<p>${esc(t)}</p>`).join("")}</div>
+        ${p.challenge ? `<div class="msection callout"><h4>The challenge</h4><p>${esc(p.challenge)}</p></div>` : ""}
+        ${p.did ? `<div class="msection"><h4>What I did</h4>${list(p.did)}</div>` : ""}
+        ${p.features ? `<div class="msection"><h4>Key features</h4><div class="fgrid">${p.features.map((f) =>
+          `<div class="fbox"><h5>${esc(f.title)}</h5>${list(f.items)}</div>`).join("")}</div></div>` : ""}
+        ${p.tech ? `<div class="msection"><h4>Under the hood</h4>${list(p.tech)}</div>` : ""}
+        ${p.outcome ? `<div class="msection"><h4>Outcome</h4><p class="outcome">${esc(p.outcome)}</p></div>` : ""}
+        <div class="msection"><h4>Built with</h4>
+        <div class="tags">${p.stack.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</div></div>
         ${p.kind === "nda" ? `<p class="nda-note">${lock} Built under an NDA, so names, screenshots and code stay private. I'm happy to talk through my role and the engineering in an interview.</p>` : ""}
         ${p.kind === "client" && !p.links.length ? `<p class="nda-note">Private client project. The code isn't public.</p>` : ""}
         ${links ? `<div class="modal-links">${links}</div>` : ""}

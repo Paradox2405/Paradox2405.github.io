@@ -371,7 +371,7 @@ kbd {
 
 /* modal */
 .modal {
-  width: min(860px, calc(100% - 24px)); max-height: calc(100svh - 40px); padding: 0;
+  width: min(920px, calc(100% - 24px)); max-height: calc(100svh - 40px); padding: 0;
   border: 1px solid var(--line-strong); border-radius: 24px; background: var(--surface); color: var(--text);
   box-shadow: 0 40px 120px -20px rgba(0,0,0,.7);
 }
@@ -388,6 +388,23 @@ kbd {
 .modal-content h4 { font: 500 0.8rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-2); margin: 26px 0 10px; }
 .modal-content ul.hl { margin: 0; padding-left: 20px; color: var(--muted); }
 .modal-content ul.hl li { margin: 6px 0; }
+.modal-content ul.hl li::marker { color: var(--accent); }
+.modal-tagline { font: 500 0.8rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-2); }
+.mfacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0 6px; }
+.mfacts div { padding: 12px 14px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line); }
+.mfacts dt { font: 500 0.7rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); }
+.mfacts dd { margin: 4px 0 0; font-weight: 600; font-size: 0.92rem; }
+.msection { margin-top: 26px; }
+.msection h4 { margin-top: 0 !important; }
+.overview p { color: var(--muted); font-size: 1.05rem; margin-top: 12px; }
+.overview p:first-child { color: var(--text); }
+.callout { padding: 16px 18px; border-radius: 14px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 9%, transparent); }
+.callout p { color: var(--muted); }
+.fgrid { columns: 2 240px; column-gap: 12px; }
+.fbox { break-inside: avoid; margin-bottom: 12px; padding: 14px 16px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line); }
+.fbox h5 { margin: 0 0 6px; font: 600 0.95rem var(--font-display); }
+.fbox ul.hl { font-size: 0.93rem; }
+.outcome { color: var(--text); font-weight: 500; }
 .modal-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .nda-note {
   margin-top: 22px; padding: 14px 16px; border-radius: 14px; font-size: 0.92rem;

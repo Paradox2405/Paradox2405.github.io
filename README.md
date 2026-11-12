@@ -9,7 +9,8 @@ Personal portfolio of **Denver Shenal**, software engineer (React, Next.js and F
 Plain HTML, CSS and JavaScript, with no build step and no dependencies. It's served by GitHub Pages.
 
 - `index.html`: page shell and meta tags
-- `data.js`: all content (projects, experience, skills). Edit this to update the site.
+- `data.js`: profile, experience, skills and community content
+- `projects.js`: project cards and their detail pages
 - `app.js`: rendering and interactions (dot field, filters, modal, timeline, command palette, theme)
 - `styles.css`: design tokens with dark and light themes
 - `assets/`: favicon, social image, project screenshots
