@@ -366,6 +366,7 @@ a.num-card:hover { border-color: var(--line-strong); transform: translateY(-2px)
 /* about */
 .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
 .about-text p { color: var(--muted); margin-top: 18px; font-size: 1.05rem; }
+@media (min-width: 961px) { .about-grid > div:first-child { position: sticky; top: 100px; } }
 .about-side { display: grid; gap: 18px; }
 .card-plain { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: var(--surface); }
 .card-plain h3 { margin-bottom: 14px; }

@@ -467,6 +467,7 @@
   $("#about-text").innerHTML = D.person.about.map((p) => `<p>${esc(p)}</p>`).join("");
   $("#education").innerHTML = D.education.map((e) => `<li><strong>${esc(e.school)}</strong><span>${esc(e.detail)}</span><em>${esc(e.period)}</em></li>`).join("");
   $("#community").innerHTML = D.community.map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span></li>`).join("");
+  $("#talks").innerHTML = (D.talks || []).map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span></li>`).join("");
 
   /* ---------- contact ---------- */
   const icons = {

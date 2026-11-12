@@ -8,8 +8,9 @@ window.PORTFOLIO = {
     pitch:
       "I build scalable, secure and fast web and mobile apps. I started in Flutter and native mobile, and now architect React and Next.js platforms in monorepos for healthcare, construction, events and retail.",
     about: [
-      "I'm a software engineer with five years of shipping products for clients in Sri Lanka, the UK, Australia and the UAE. I started out in mobile with Flutter, Kotlin and Java, and these days most of my work is React and Next.js inside monorepos, built from shared, modular components (Atomic Design).",
+      "I'm a software engineer with five years of shipping products for clients in Sri Lanka, the UK, Australia and the UAE. I started as an intern at Calico in 2019, then built mobile apps with Flutter, Kotlin and Java, and these days most of my work is React and Next.js inside monorepos, built from shared, modular components (Atomic Design).",
       "Beyond features, I care about architecture, frontend performance, CI/CD and AI-driven workflows that take real work off people's plates. I hold a high bar for code quality, documentation and information security, and I like teams where long-term maintainability matters as much as the next release.",
+      "Outside code I'm a freelance designer, photographer and compère. That's where my eye for UI comes from. I've also led teams for years: I chaired the IEEE Student Branch at NSBM Green University, founded its Duothan hackathon, and led teams in IEEE Sri Lanka Section programmes.",
     ],
     // Assembled at runtime to keep it away from simple scrapers.
     emailParts: ["denvershenal2405", "gmail.com"],
@@ -235,6 +236,10 @@ window.PORTFOLIO = {
 
   community: [
     {
+      title: "Chairman, IEEE Student Branch, NSBM",
+      text: "Led the university's IEEE Student Branch (2020–21) after a year as its webmaster (2019–20).",
+    },
+    {
       title: "Founder, Duothan 1.0",
       text: "Founded the flagship inter-university hackathon of the IEEE Student Branch at NSBM Green University. It became an annual island-wide coding contest.",
     },
@@ -243,13 +248,32 @@ window.PORTFOLIO = {
       text: "Ran a hands-on Flutter and Firebase workshop on building real cross-platform apps.",
     },
     {
-      title: "IEEE SL Inspire",
-      text: "Organising committee for a national IEEE Sri Lanka Section outreach programme that gives students career and higher-education guidance across every province.",
+      title: "IEEE SL Inspire & SLSYWC",
+      text: "Publicity team lead (2020–21) and graphic designer (2019–20) for SL Inspire, a national IEEE Sri Lanka Section outreach programme that gives students career and higher-education guidance across every province; logistics team lead for the SLSYWC Congress (2021).",
+    },
+    {
+      title: "Earlier leadership",
+      text: "Community Service Director, Rotaract Club of Katugastota; President, American Corner Youth Forum, Kandy; President of the ICT and Photographic Societies at Trinity College.",
+    },
+  ],
+
+  talks: [
+    {
+      title: "Research: contact tracing with mobile apps",
+      text: "Designed a Bluetooth LE contact-tracing system (V-Trace) that reached a 96% success rate in physical tests, with GIS mapping of spread documented for future work.",
+    },
+    {
+      title: "Research: Sri Lanka's cyber-crime law",
+      text: "Analysed Sri Lanka's cyber-crime law against EU law and proposed reforms for cyber forensics and specialist courts.",
+    },
+    {
+      title: "Talks at NSBM Green University",
+      text: "eMinds 2018: 3D model generation with ARCore for 3D printing. Open Day 2019: package tracking with barcode scanning and mobile apps.",
     },
   ],
 
   education: [
-    { school: "University of Plymouth, UK", detail: "BSc (Hons) Software Engineering, Second Upper Division", period: "2018 – 2021" },
-    { school: "Trinity College, Kandy", detail: "GCE Advanced Level (2017) · Ordinary Level (2014)", period: "2004 – 2017" },
+    { school: "University of Plymouth, UK", detail: "BSc (Hons) Software Engineering, Second Class Upper Division. Delivered at NSBM Green University. Coursework included algorithms and data structures, design patterns, distributed systems, cloud computing, IoT and network security.", period: "Mar 2018 – Jul 2021" },
+    { school: "Trinity College, Kandy", detail: "GCE A/L 2017 (ICT, Economics, Physics) · O/L 2014", period: "2004 – 2017" },
   ],
 };

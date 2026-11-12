@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="252" viewBox="0 0 480 252" role="img" aria-label="Denver Shenal's coding stats">
+<style>
+  .t { font: 600 17px 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif; fill: #eef0f7; }
+  .s { font: 400 11px 'Segoe UI', Ubuntu, sans-serif; fill: #6b7290; }
+  .v { font: 700 20px 'Segoe UI', Ubuntu, sans-serif; fill: #eef0f7; }
+  .l { font: 400 11.5px 'Segoe UI', Ubuntu, sans-serif; fill: #9aa1b8; }
+</style>
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8b7bff"/><stop offset=".6" stop-color="#3ee6c4"/><stop offset="1" stop-color="#e8f15a"/></linearGradient>
+<clipPath id="bar"><rect x="24" y="196" width="432" height="8" rx="4"/></clipPath></defs>
+<rect x=".5" y=".5" width="479" height="251" rx="12" fill="#0f1119" stroke="#262a3a"/>
+<rect x="24" y="22" width="4" height="18" rx="2" fill="url(#g)"/>
+<text x="36" y="37" class="t">Denver's coding stats</text>
+<text x="456" y="37" text-anchor="end" class="s">updated Nov 2026</text>
+<text x="24" y="74" class="v">2,697</text><text x="24" y="92" class="l">Hours coded</text><text x="176" y="74" class="v">2h 17m</text><text x="176" y="92" class="l">Daily average</text><text x="328" y="74" class="v">59</text><text x="328" y="92" class="l">Public repos</text><text x="24" y="126" class="v">14</text><text x="24" y="144" class="l">Stars earned</text><text x="176" y="126" class="v">99</text><text x="176" y="144" class="l">Followers</text><text x="328" y="126" class="v">449</text><text x="328" y="144" class="l">Stack Overflow rep</text>
+<text x="24" y="184" class="s">TOP LANGUAGES (WAKATIME, ALL TIME)</text>
+<g clip-path="url(#bar)"><rect x="24.0" y="196" width="242.1" height="8" fill="#8b7bff"/><rect x="266.1" y="196" width="104.4" height="8" fill="#3ee6c4"/><rect x="370.5" y="196" width="71.2" height="8" fill="#e8f15a"/><rect x="441.8" y="196" width="9.5" height="8" fill="#f472b6"/><rect x="451.3" y="196" width="4.7" height="8" fill="#60a5fa"/></g>
+<circle cx="28" cy="225" r="4" fill="#8b7bff"/><text x="37" y="229" class="l">Dart 51%</text><circle cx="97.2" cy="225" r="4" fill="#3ee6c4"/><text x="106.2" y="229" class="l">TypeScript 22%</text><circle cx="204.8" cy="225" r="4" fill="#e8f15a"/><text x="213.8" y="229" class="l">JavaScript 15%</text><circle cx="312.40000000000003" cy="225" r="4" fill="#f472b6"/><text x="321.40000000000003" y="229" class="l">Kotlin 2%</text><circle cx="388" cy="225" r="4" fill="#60a5fa"/><text x="397" y="229" class="l">Java 1%</text>
+</svg>
