@@ -10,7 +10,7 @@ window.PORTFOLIO = {
     about: [
       "I'm a software engineer with five years of shipping products for clients in Sri Lanka, the UK, Australia and the UAE. I started as an intern at Calico in 2019, then built mobile apps with Flutter, Kotlin and Java, and these days most of my work is React and Next.js inside monorepos, built from shared, modular components (Atomic Design).",
       "Beyond features, I care about architecture, frontend performance, CI/CD and AI-driven workflows that take real work off people's plates. I hold a high bar for code quality, documentation and information security, and I like teams where long-term maintainability matters as much as the next release.",
-      "Outside code I'm a freelance designer, photographer and compère. That's where my eye for UI comes from. I've also led teams for years: I chaired the IEEE Student Branch at NSBM Green University, founded its Duothan hackathon, and led teams in IEEE Sri Lanka Section programmes. I also enjoy teaching: in 2023 I was a resource person at \"Flutter Unleashed\", a hands-on Flutter and Firebase workshop for undergraduates at KDU.",
+      "Outside code I'm a freelance designer, photographer and compère. That's where my eye for UI comes from. I've also led teams for years: I chaired the IEEE Student Branch at NSBM Green University, founded its Duothan hackathon, and led teams in IEEE Sri Lanka Section programmes. I also enjoy teaching: in 2023 I led the Flutter sessions of \"Flutter Unleashed\", a hands-on Flutter and Firebase workshop for undergraduates at KDU.",
     ],
     // Assembled at runtime to keep it away from simple scrapers.
     emailParts: ["denvershenal2405", "gmail.com"],
@@ -183,7 +183,7 @@ window.PORTFOLIO = {
             "Managed complex app state with GetX, Provider and BLoC, choosing the right tool for each project.",
             "Built cross-platform apps that stay scalable and maintainable, and distributed them through the App Store, Play Store and app bundles.",
             "Worked closely with backend teams and clients in Agile sprints to deliver features on time.",
-            "Represented Flexiata as a resource person at \"Flutter Unleashed\", a Flutter and Firebase workshop for KDU undergraduates (Sep 2023).",
+            "Represented Flexiata as the Flutter lead at \"Flutter Unleashed\", a Flutter and Firebase workshop for KDU undergraduates (Sep 2023), with colleagues covering backend and UI/UX.",
           ],
         },
       ],
@@ -257,7 +257,7 @@ window.PORTFOLIO = {
   talks: [
     {
       title: "Flutter Unleashed: A Comprehensive Workshop",
-      text: "Resource person at General Sir John Kotelawala Defence University (KDU), Southern Campus, on 22 Sep 2023. Alongside two co-presenters, I gave two IT intakes a hands-on, beginner-friendly introduction to building cross-platform apps with Flutter and Firebase.",
+      text: "Flutter lead at a workshop for General Sir John Kotelawala Defence University (KDU), Southern Campus, on 22 Sep 2023. I led the Flutter sessions, with co-presenters covering the backend and UI/UX, and gave two IT intakes a hands-on, beginner-friendly start in building cross-platform apps with Flutter and Firebase.",
       url: "https://foc.kdu.ac.lk/news/flutter-unleashed-a-comprehensive-workshop/",
       highlight: true,
     },
