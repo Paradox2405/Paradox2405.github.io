@@ -23,7 +23,7 @@ window.PORTFOLIO.projects = [
     summary:
       "A LAN-only, offline-capable POS and inventory system that replaced a legacy VB6 + SQL Server system. Counters keep selling when the network drops, then sync and reconcile.",
     overview: [
-      "Sun Fair is a clothing store that ran on an ageing desktop stock system built in VB6 on SQL Server. The owners needed something they could trust at the till, run on their own premises, and keep using on the shop floor with phones.",
+      "Sun Fair is a clothing store in Kandy that ran on an ageing desktop stock system built in VB6 on SQL Server. The owners needed something they could trust at the till, run on their own premises, and keep using on the shop floor with phones.",
       "I built a replacement as an installable web app (PWA) that runs on the store's local network. It serves the counters, the management PCs and Android phones for stock counting, with no dependency on an internet connection.",
     ],
     challenge:
@@ -49,7 +49,8 @@ window.PORTFOLIO.projects = [
     ],
     outcome: "Built and tested. Legacy data has been migrated, and in-store go-live is under way.",
     stack: ["React", "TypeScript", "Vite PWA", "Dexie", "Fastify", "PostgreSQL", "Zod", "Vitest", "Playwright"],
-    links: [],
+    image: "assets/shots/sunfair.jpg",
+    links: [{ label: "Sun Fair on Facebook", url: "https://www.facebook.com/p/Sun-Fair-100075800727311/" }],
     accent: ["#f97316", "#facc15"],
   },
   {
@@ -440,10 +441,10 @@ window.PORTFOLIO.projects = [
     title: "Event vendor management dashboard",
     kind: "nda",
     type: "web",
-    year: "2024–26",
+    year: "2026",
     featured: false,
-    status: "In production",
-    role: "Frontend engineer",
+    status: "In production · I'm on it now",
+    role: "Frontend engineer (at Wire Apps)",
     tagline: "Run events, payouts and subscriptions",
     summary:
       "Dashboard for event vendors to create and manage events, plan their strategy, handle subscriptions and receive payouts, deployed to AWS by automated pipelines.",
@@ -469,7 +470,7 @@ window.PORTFOLIO.projects = [
       "AWS Amplify / Cognito auth, Leaflet routing, Recharts and Tiptap.",
       "GitHub Actions deploy to S3 + CloudFront (frontend) and ECS Fargate with Terraform (API).",
     ],
-    outcome: "In production. Built under an NDA.",
+    outcome: "In production. I worked on it from February to July 2026 and I'm back on it now. Built under an NDA.",
     stack: ["React", "Redux Toolkit", "Ant Design", "Stripe", "AWS", "GitHub Actions"],
     links: [],
     accent: ["#6d28d9", "#c4b5fd"],

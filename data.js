@@ -45,8 +45,8 @@ window.PORTFOLIO = {
         "I build enterprise web platforms in a shared React and Next.js monorepo for clients in healthcare, construction and events. I own features from the UI architecture down to the API, add AI-driven automation, and meet ISO, information security and GDPR requirements.",
       industries: ["Healthcare", "Construction", "Events"],
       facts: [
-        { value: "3", label: "client products" },
-        { value: "115+", label: "pull requests" },
+        { value: "4", label: "client products" },
+        { value: "165+", label: "pull requests" },
         { value: "1", label: "shared monorepo" },
       ],
       groups: [
@@ -57,6 +57,7 @@ window.PORTFOLIO = {
             "Contributed across a multi-tenant medical device compliance platform with role-based workspaces, a rich-text documentation editor, document import, PDF generation and signed approval workflows.",
             "Built the review flow of an AI quantity-surveying platform for construction: bulk file upload, column mapping with validation, step-by-step bill of quantities approval, and real-time updates over WebSockets.",
             "Work on an event planning marketplace with a Next.js 15 / React 19 frontend on a Laravel API.",
+            "Build features for an event vendor management dashboard (React, Redux Toolkit, Stripe Connect payouts, maps and e-signatures), deployed to AWS through GitHub Actions. I worked on it in the first half of 2026 and I'm on it again now.",
           ],
         },
         {
@@ -78,8 +79,8 @@ window.PORTFOLIO = {
           points: ["Work closely with designers and backend engineers to turn complex business requirements into secure, high-performance software."],
         },
       ],
-      projects: ["nda-medical", "nda-qs", "nda-marketplace"],
-      tags: ["Next.js", "React", "TypeScript", "NestJS", "Turborepo", "TanStack Query", "Tailwind", "shadcn/ui", "Storybook", "WebSockets", "Laravel"],
+      projects: ["nda-medical", "nda-qs", "nda-events", "nda-marketplace"],
+      tags: ["Next.js", "React", "TypeScript", "NestJS", "Turborepo", "TanStack Query", "Redux Toolkit", "Tailwind", "shadcn/ui", "Storybook", "WebSockets", "Stripe", "AWS", "Laravel"],
     },
     {
       company: "Mexxar Ltd.",
