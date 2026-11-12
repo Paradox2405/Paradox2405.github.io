@@ -331,6 +331,38 @@ kbd {
 .skill[disabled]:hover { transform: none; border-color: var(--line); }
 .skill .n { font: 500 0.72rem var(--font-mono); color: var(--accent-2); margin-left: 6px; }
 
+/* by the numbers */
+.numbers { margin-bottom: 28px; }
+.num-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 14px; }
+.num-head h3 { font-size: 1.15rem; }
+.num-updated { font: 500 0.75rem var(--font-mono); color: var(--faint); }
+.num-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 18px; }
+.num-card {
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: var(--surface);
+  transition: border-color 0.2s, transform 0.2s var(--ease);
+}
+a.num-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.num-big strong { font: 700 clamp(2rem, 4vw, 2.6rem) var(--font-display); letter-spacing: -0.02em; }
+.num-sub { color: var(--muted); font-size: 0.88rem; margin-top: 2px; }
+.langs { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; }
+.langs li { display: grid; grid-template-columns: 92px 1fr 40px; align-items: center; gap: 10px; font-size: 0.86rem; }
+.lang-name { color: var(--text); }
+.lang-pct { font: 500 0.78rem var(--font-mono); color: var(--faint); text-align: right; }
+.lang-bar { height: 8px; border-radius: 999px; background: var(--bg-2); overflow: hidden; }
+.lang-bar span { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--grad); transition: width 1.2s var(--ease) 0.2s; }
+.numbers.in .lang-bar span { width: var(--w); }
+.num-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+.num-list li { display: flex; align-items: baseline; gap: 10px; }
+.num-list strong { font: 700 1.5rem var(--font-display); min-width: 2.4ch; }
+.num-list span { color: var(--muted); font-size: 0.88rem; }
+.badges-so { margin-top: 12px; font: 500 0.85rem var(--font-mono); color: var(--muted); }
+.badges-so .b { font-size: 0.7rem; margin-left: 6px; }
+.badges-so .b:first-child { margin-left: 0; }
+.b.gold { color: #f1b600; } .b.silver { color: #9aa1a9; } .b.bronze { color: #c38b5f; }
+@media (max-width: 860px) { .num-grid { grid-template-columns: 1fr 1fr; } .num-card.wide { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .num-grid { grid-template-columns: 1fr; } }
+
 /* about */
 .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
 .about-text p { color: var(--muted); margin-top: 18px; font-size: 1.05rem; }

@@ -1,0 +1,40 @@
+{
+  "updatedAt": "2026-11-12",
+  "wakatime": {
+    "hours": 2697,
+    "dailyAverage": "2 hrs 17 mins",
+    "languages": [
+      {
+        "name": "Dart",
+        "percent": 51
+      },
+      {
+        "name": "TypeScript",
+        "percent": 22
+      },
+      {
+        "name": "JavaScript",
+        "percent": 15
+      },
+      {
+        "name": "Kotlin",
+        "percent": 2
+      },
+      {
+        "name": "Java",
+        "percent": 1
+      }
+    ]
+  },
+  "github": {
+    "repos": 59,
+    "followers": 99,
+    "stars": 14
+  },
+  "stackoverflow": {
+    "reputation": 449,
+    "gold": 0,
+    "silver": 4,
+    "bronze": 13
+  }
+}

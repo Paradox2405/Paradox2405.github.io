@@ -21,12 +21,31 @@ window.PORTFOLIO = {
     ],
   },
 
+  // Hero stats. `since` = counted in full years from that month; `stat` = read from stats.json.
   stats: [
-    { value: 5, suffix: "+", label: "years shipping software" },
+    { since: "2021-08", suffix: "+", label: "years shipping software" },
+    { stat: "wakatime.hours", value: 2697, suffix: "+", label: "hours coded (WakaTime)" },
     { value: 40, suffix: "+", label: "projects built" },
     { value: 4, suffix: "", label: "companies" },
-    { value: 4, suffix: "", label: "countries served" },
   ],
+
+  // Fallback for stats.json (updated monthly by .github/workflows/update-stats.yml).
+  liveStats: {
+    updatedAt: "2026-11-12",
+    wakatime: {
+      hours: 2697,
+      dailyAverage: "2 hrs 17 mins",
+      languages: [
+        { name: "Dart", percent: 51 },
+        { name: "TypeScript", percent: 22 },
+        { name: "JavaScript", percent: 15 },
+        { name: "Kotlin", percent: 2 },
+        { name: "Java", percent: 1 },
+      ],
+    },
+    github: { repos: 59, followers: 99, stars: 14 },
+    stackoverflow: { reputation: 449, gold: 0, silver: 4, bronze: 13 },
+  },
 
   careerGlance: {
     path: ["Intern", "Software Engineer", "Flutter Engineer", "Senior Engineer", "Software Engineer (web platforms)"],

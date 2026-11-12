@@ -28,9 +28,68 @@
 
   /* ---------- hero ---------- */
   $("#pitch").textContent = D.person.pitch;
+  /* ---------- live stats (stats.json, updated monthly; falls back to data.js) ---------- */
+  let live = D.liveStats;
+  const pick = (path) => path.split(".").reduce((o, k) => (o == null ? o : o[k]), live);
+  const yearsSince = (ym) => {
+    const [y, m] = ym.split("-").map(Number), now = new Date();
+    return Math.floor((now.getFullYear() * 12 + now.getMonth() + 1 - (y * 12 + m)) / 12);
+  };
+  const statValue = (s) => (s.since ? yearsSince(s.since) : s.stat ? pick(s.stat) ?? s.value : s.value);
+  const fmt = (n) => Number(n).toLocaleString("en-US");
+
   $("#stats").innerHTML = D.stats
-    .map((s) => `<li><strong data-count="${s.value}" data-suffix="${esc(s.suffix)}">0${esc(s.suffix)}</strong><span>${esc(s.label)}</span></li>`)
+    .map((s) => `<li><strong data-count="${statValue(s)}" data-suffix="${esc(s.suffix)}">0${esc(s.suffix)}</strong><span>${esc(s.label)}</span></li>`)
     .join("");
+
+  function renderNumbers() {
+    const w = live.wakatime, g = live.github, so = live.stackoverflow;
+    const month = new Date(live.updatedAt + "T00:00:00").toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+    $("#numbers").innerHTML = `
+      <div class="num-head"><h3>By the numbers</h3><span class="num-updated">Updated ${esc(month)} · refreshes monthly</span></div>
+      <div class="num-grid">
+        <div class="num-card wide">
+          <p class="glance-label">WakaTime · all time</p>
+          <p class="num-big"><strong data-count="${w.hours}" data-suffix=" hrs">0 hrs</strong></p>
+          <p class="num-sub">coding time tracked · ${esc(w.dailyAverage)} daily average</p>
+          <ul class="langs">${w.languages.map((l) => `
+            <li><span class="lang-name">${esc(l.name)}</span>
+              <span class="lang-bar"><span style="--w:${l.percent}%"></span></span>
+              <span class="lang-pct">${l.percent}%</span></li>`).join("")}</ul>
+        </div>
+        <a class="num-card" href="https://github.com/Paradox2405" target="_blank" rel="noopener">
+          <p class="glance-label">GitHub</p>
+          <ul class="num-list">
+            <li><strong data-count="${g.repos}" data-suffix="">0</strong><span>public repos</span></li>
+            <li><strong data-count="${g.stars}" data-suffix="">0</strong><span>stars</span></li>
+            <li><strong data-count="${g.followers}" data-suffix="">0</strong><span>followers</span></li>
+          </ul>
+        </a>
+        <a class="num-card" href="https://stackoverflow.com/users/13601462/denver-shenal" target="_blank" rel="noopener">
+          <p class="glance-label">Stack Overflow</p>
+          <p class="num-big"><strong data-count="${so.reputation}" data-suffix="">0</strong></p>
+          <p class="num-sub">reputation</p>
+          <p class="badges-so">${[["gold", so.gold], ["silver", so.silver], ["bronze", so.bronze]].filter(([, n]) => n)
+            .map(([k, n]) => `<span class="b ${k}" aria-hidden="true">●</span> ${n} ${k}`).join(" · ")} badges</p>
+        </a>
+      </div>`;
+  }
+  renderNumbers();
+
+  fetch("stats.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((json) => {
+      live = json;
+      $$("#stats strong").forEach((el, i) => {
+        const v = statValue(D.stats[i]);
+        el.dataset.count = v;
+        if (el.dataset.done) el.textContent = fmt(v) + el.dataset.suffix;
+      });
+      const wasIn = $("#numbers").classList.contains("in");
+      renderNumbers();
+      if (wasIn) { $("#numbers").classList.add("lit"); $$("#numbers [data-count]").forEach(countUp); }
+    })
+    .catch(() => {});
 
   function typeRoles() {
     const el = $("#role");
@@ -53,11 +112,13 @@
 
   function countUp(el) {
     const target = +el.dataset.count, suffix = el.dataset.suffix;
-    if (reduce) { el.textContent = target + suffix; return; }
+    const show = (n) => (el.textContent = Number(n).toLocaleString("en-US") + suffix);
+    el.dataset.done = "1";
+    if (reduce) { show(target); return; }
     const t0 = performance.now(), dur = 1400;
     const step = (t) => {
       const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * e) + suffix;
+      show(Math.round(+el.dataset.count * e));
       if (p < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
