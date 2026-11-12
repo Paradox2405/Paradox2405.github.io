@@ -601,6 +601,40 @@ window.PORTFOLIO.projects = [
     accent: ["#0f766e", "#5eead4"],
   },
   {
+    id: "upeksha",
+    title: "Upeksha",
+    kind: "client",
+    type: "mobile",
+    year: "2019",
+    featured: false,
+    status: "Was on Google Play (now retired)",
+    role: "Android developer in a freelance team",
+    tagline: "Careers and care for nurses",
+    summary:
+      "Android app for the ICM Global Foundation that helped Sri Lankan nurses find safe jobs abroad, build a CV, and get counselling and support.",
+    overview: [
+      "Upeksha (\"care for those who care\") was an initiative of the ICM Global Foundation to support nurses, most of them women, in finding safe and sustainable work around the world, and to support them along the way.",
+      "The Android app brought that together in one place: job opportunities through talent search, a CV builder, career guidance, free e-therapy and counselling, a web radio channel and news. It was published on Google Play alongside a public website.",
+    ],
+    challenge:
+      "The audience was busy nurses, many using a smartphone app for career help for the first time. Everything from sign-up to a finished CV to booking a counselling session had to be simple, friendly and trustworthy.",
+    did: [
+      "Worked as an Android developer (Java) in a small freelance team that built and shipped the app to Google Play.",
+      "Built app screens and features alongside the team, from sign-in to the services on the home screen.",
+    ],
+    features: [
+      { title: "Careers", items: ["Talent search and job opportunities", "Create-your-CV builder", "Career guidance"] },
+      { title: "Wellbeing", items: ["Free e-therapy and counselling with licensed therapists", "Web radio channel", "Today's story and news"] },
+      { title: "Account", items: ["Sign-in with email or Facebook", "Welfare and e-commerce features planned for later"] },
+    ],
+    tech: ["Native Android in Java.", "Published on Google Play, with a companion website for the foundation."],
+    outcome: "Shipped on Google Play for the ICM Global Foundation. The app has since been retired, and the website is still online.",
+    stack: ["Java", "Android"],
+    image: "assets/shots/upeksha.jpg",
+    links: [{ label: "Upeksha website", url: "https://hrstudio01.wixsite.com/upeksha" }],
+    accent: ["#1e3a5f", "#ec4899"],
+  },
+  {
     id: "safety",
     title: "Women's Safety App",
     kind: "personal",
