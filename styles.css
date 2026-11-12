@@ -375,6 +375,11 @@ a.num-card:hover { border-color: var(--line-strong); transform: translateY(-2px)
 .edu span, .community span { color: var(--muted); font-size: 0.92rem; display: block; }
 .edu em { font: 500 0.75rem var(--font-mono); color: var(--faint); font-style: normal; }
 
+.talk-hl { padding: 14px 16px; border-radius: 14px; background: color-mix(in srgb, var(--accent) 10%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); }
+.hl-badge { display: inline-block; font: 500 0.68rem var(--font-mono); font-style: normal; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-2); margin-bottom: 6px; }
+.talk-link { display: inline-block; margin-top: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); }
+.talk-link:hover { color: var(--accent-2); }
+
 /* contact */
 .contact { padding-bottom: 80px; }
 .contact-card {

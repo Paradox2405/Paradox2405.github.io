@@ -467,7 +467,7 @@
   $("#about-text").innerHTML = D.person.about.map((p) => `<p>${esc(p)}</p>`).join("");
   $("#education").innerHTML = D.education.map((e) => `<li><strong>${esc(e.school)}</strong><span>${esc(e.detail)}</span><em>${esc(e.period)}</em></li>`).join("");
   $("#community").innerHTML = D.community.map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span></li>`).join("");
-  $("#talks").innerHTML = (D.talks || []).map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span></li>`).join("");
+  $("#talks").innerHTML = (D.talks || []).map((c) => `<li class="${c.highlight ? "talk-hl" : ""}">${c.highlight ? `<em class="hl-badge">Featured talk</em>` : ""}<strong>${esc(c.title)}</strong><span>${esc(c.text)}</span>${c.url ? `<a class="talk-link" href="${c.url}" target="_blank" rel="noopener">Read the article ↗</a>` : ""}</li>`).join("");
 
   /* ---------- contact ---------- */
   const icons = {
