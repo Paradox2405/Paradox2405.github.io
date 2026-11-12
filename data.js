@@ -28,53 +28,174 @@ window.PORTFOLIO = {
     { value: 4, suffix: "", label: "countries served" },
   ],
 
+  careerGlance: {
+    path: ["Intern", "Software Engineer", "Flutter Engineer", "Senior Engineer", "Software Engineer (web platforms)"],
+    industries: ["Healthcare", "Construction", "Events", "Property", "Automotive & logistics", "ERP", "IoT"],
+  },
+
+  // start/end are "YYYY-MM" (end null = present). Durations are calculated on the page.
   experience: [
     {
       company: "Wire Apps Ltd.",
       role: "Software Engineer",
-      period: "Jun 2025 – Present",
-      points: [
-        "Build scalable web apps with React and Next.js inside a monorepo, using Atomic Design for shared, modular components.",
-        "Deliver platforms for healthcare, construction and event management, working closely with design and backend teams.",
-        "Architect AI-driven features and workflow automation that speed up business processes.",
-        "Work to ISO standards, information security best practice and GDPR; tune performance and accessibility.",
+      start: "2025-06",
+      end: null,
+      focus: "Web platforms · React & Next.js",
+      summary:
+        "I build enterprise web platforms in a shared React and Next.js monorepo for clients in healthcare, construction and events. I own features from the UI architecture down to the API, add AI-driven automation, and meet ISO, information security and GDPR requirements.",
+      industries: ["Healthcare", "Construction", "Events"],
+      facts: [
+        { value: "3", label: "client products" },
+        { value: "115+", label: "pull requests" },
+        { value: "1", label: "shared monorepo" },
       ],
-      tags: ["Next.js", "React", "TypeScript", "NestJS", "Turborepo", "AI features"],
+      groups: [
+        {
+          title: "Product engineering",
+          points: [
+            "Build scalable web apps with React and Next.js inside a Turborepo monorepo, using Atomic Design so components are shared and modular across products.",
+            "Contributed across a multi-tenant medical device compliance platform with role-based workspaces, a rich-text documentation editor, document import, PDF generation and signed approval workflows.",
+            "Built the review flow of an AI quantity-surveying platform for construction: bulk file upload, column mapping with validation, step-by-step bill of quantities approval, and real-time updates over WebSockets.",
+            "Work on an event planning marketplace with a Next.js 15 / React 19 frontend on a Laravel API.",
+          ],
+        },
+        {
+          title: "AI & automation",
+          points: [
+            "Architect and implement AI-driven features and workflow automation that cut manual steps out of business processes.",
+          ],
+        },
+        {
+          title: "Architecture & quality",
+          points: [
+            "Contribute to architectural decisions in the monorepo: consistent coding standards, shared UI packages (with Storybook) and streamlined deployments.",
+            "Optimise frontend performance, accessibility and scalability to enterprise security and governance requirements.",
+            "Work to ISO standards, information security best practice and GDPR on every implementation.",
+          ],
+        },
+        {
+          title: "Collaboration",
+          points: ["Work closely with designers and backend engineers to turn complex business requirements into secure, high-performance software."],
+        },
+      ],
+      projects: ["nda-medical", "nda-qs", "nda-marketplace"],
+      tags: ["Next.js", "React", "TypeScript", "NestJS", "Turborepo", "TanStack Query", "Tailwind", "shadcn/ui", "Storybook", "WebSockets", "Laravel"],
     },
     {
       company: "Mexxar Ltd.",
       role: "Senior Software Engineer",
-      period: "Jan 2024 – Jun 2025",
-      points: [
-        "Led end-to-end development of healthcare mobile apps, built for scalability and performance.",
-        "Directed frontend engineering: introduced modern practices, ran code reviews and refactored legacy systems.",
-        "Set up CI/CD with GitHub Actions and standardised Jira workflows across teams.",
-        "Mentored engineers on coding standards and design patterns; built modern React solutions.",
+      start: "2024-01",
+      end: "2025-06",
+      focus: "Frontend lead · Healthcare",
+      summary:
+        "Senior engineer and frontend lead. I built a healthcare mobile app from the ground up, raised the bar for the whole frontend team with reviews, mentoring and CI/CD, and brought in modern React architecture for web projects.",
+      industries: ["Healthcare"],
+      facts: [
+        { value: "0 → 1", label: "healthcare app built from scratch" },
+        { value: "CI/CD", label: "pipelines set up" },
+        { value: "Team", label: "lead & mentor" },
       ],
-      tags: ["Flutter", "React", "GitHub Actions", "Code review", "Mentoring"],
+      groups: [
+        {
+          title: "Product engineering",
+          points: [
+            "Led end-to-end development of a healthcare mobile app from the ground up, using an MVC architecture built for scalability, maintainability and performance.",
+            "Architected modern React solutions and delivered new features for web and mobile projects as business needs changed.",
+            "Improved UI/UX across web and mobile apps for usability, accessibility and visual quality.",
+          ],
+        },
+        {
+          title: "Leadership",
+          points: [
+            "Led the frontend team: introduced modern best practices, ran code reviews, and refactored legacy codebases for robustness and scale.",
+            "Mentored and coached engineers on coding standards, design patterns and best practices.",
+            "Standardised Jira usage and aligned workflows with industry practice, improving collaboration between teams.",
+          ],
+        },
+        {
+          title: "Delivery",
+          points: [
+            "Set up and ran CI/CD pipelines with GitHub Actions, making releases faster and cutting deployment errors.",
+            "Promoted structured documentation and enforceable code-quality standards for long-term maintainability.",
+          ],
+        },
+      ],
+      projects: [],
+      tags: ["Flutter", "React", "MVC", "GitHub Actions", "Code review", "Mentoring", "Jira"],
     },
     {
       company: "Flexiata PTY Ltd.",
       role: "Software Engineer – Flutter",
-      period: "Jul 2022 – Dec 2023",
-      points: [
-        "Led a property management app for the Australian market.",
-        "Built a warehouse app for a major Australian truck distributor, with voice input and image capture.",
-        "Shipped to the App Store and Play Store; used GetX, Provider and BLoC for complex app state.",
-        "Worked with backend teams and clients in Agile sprints.",
+      start: "2022-07",
+      end: "2023-12",
+      focus: "Mobile · Australian clients",
+      summary:
+        "Flutter engineer on client apps for the Australian market, shipped to the App Store and Play Store. I led a property investment app and pioneered a warehouse app for a major truck distributor.",
+      industries: ["Property", "Automotive & logistics"],
+      facts: [
+        { value: "iOS + Android", label: "store releases" },
+        { value: "Lead", label: "on property app" },
+        { value: "Voice + camera", label: "warehouse workflows" },
       ],
-      tags: ["Flutter", "BLoC", "GetX", "Provider", "iOS", "Android"],
+      groups: [
+        {
+          title: "Property investment app (lead)",
+          points: [
+            "Led development of a property management app that tracks rent, expenses, mortgages, depreciation, insurance, documents and tasks for each property.",
+            "Structured it with BLoC + RxDart, with separate development and production flavours, secure token storage, biometric unlock, and push and local reminders.",
+          ],
+        },
+        {
+          title: "Warehouse dimension scanner",
+          points: [
+            "Pioneered a mobile solution for a major Australian truck distributor: scan a part's barcode, enter package dimensions by voice (speech-to-text) or keyboard, and attach photos.",
+            "Streamlined data handling and made warehouse operations more efficient, with a scan history for every part.",
+          ],
+        },
+        {
+          title: "Engineering practice",
+          points: [
+            "Managed complex app state with GetX, Provider and BLoC, choosing the right tool for each project.",
+            "Built cross-platform apps that stay scalable and maintainable, and distributed them through the App Store, Play Store and app bundles.",
+            "Worked closely with backend teams and clients in Agile sprints to deliver features on time.",
+          ],
+        },
+      ],
+      projects: ["nda-property", "nda-warehouse"],
+      tags: ["Flutter", "Dart", "BLoC", "RxDart", "Provider", "GetX", "Firebase", "REST APIs", "App Store", "Play Store"],
     },
     {
       company: "CeylonLab Solutions (Pvt) Ltd.",
       role: "Software Engineer",
-      period: "Aug 2021 – Jun 2022",
-      points: [
-        "Grew from intern to software engineer, delivering mobile apps for ERP, IoT and commercial systems.",
-        "Worked in Agile and Waterfall teams on Jira-based projects.",
-        "Managed releases and version control across GitHub, GitLab and Bitbucket; wrote technical documentation.",
+      start: "2021-08",
+      end: "2022-06",
+      focus: "Intern → Engineer · Mobile",
+      summary:
+        "Where I started. I joined as an intern and was promoted to software engineer, building mobile apps for ERP, IoT and commercial systems with Flutter, Kotlin and Java under close senior mentorship.",
+      industries: ["ERP", "IoT"],
+      facts: [
+        { value: "Intern → SE", label: "promotion" },
+        { value: "3", label: "languages: Flutter, Kotlin, Java" },
       ],
-      tags: ["Flutter", "Kotlin", "Java", "IoT"],
+      groups: [
+        {
+          title: "Product engineering",
+          points: [
+            "Delivered mobile apps for ERP, IoT and commercial systems with Flutter, Kotlin and Java.",
+            "Integrated apps with backend services and wrote technical documentation that kept them scalable and maintainable.",
+          ],
+        },
+        {
+          title: "Process & delivery",
+          points: [
+            "Worked in cross-functional Agile and Waterfall teams on Jira-based projects and delivered features on time.",
+            "Managed releases and version control across GitHub, GitLab and Bitbucket.",
+            "Worked through the full mobile development lifecycle, following industry best practices.",
+          ],
+        },
+      ],
+      projects: [],
+      tags: ["Flutter", "Kotlin", "Java", "IoT", "GitHub", "GitLab", "Bitbucket", "Jira"],
     },
   ],
 

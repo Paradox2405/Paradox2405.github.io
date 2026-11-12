@@ -287,23 +287,83 @@
 
   /* ---------- experience ---------- */
   const tl = $("#timeline");
-  tl.insertAdjacentHTML("beforeend", D.experience.map((j, i) => `
-    <li class="job reveal">
-      <div class="job-card" data-open="${i === 0}">
-        <button class="job-head" aria-expanded="${i === 0}">
-          <div><h3>${esc(j.role)}</h3><p class="co">${esc(j.company)}</p></div>
-          <span class="when">${esc(j.period)} <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const parseYM = (s) => { if (!s) { const d = new Date(); return [d.getFullYear(), d.getMonth() + 1]; } const [y, m] = s.split("-").map(Number); return [y, m]; };
+  const fmtYM = (s) => (s ? `${MONTHS[parseYM(s)[1] - 1]} ${parseYM(s)[0]}` : "Present");
+  const duration = (a, b) => {
+    const [y1, m1] = parseYM(a), [y2, m2] = parseYM(b);
+    const months = (y2 - y1) * 12 + (m2 - m1) + 1, y = Math.floor(months / 12), m = months % 12;
+    return [y && `${y} yr${y > 1 ? "s" : ""}`, m && `${m} mo${m > 1 ? "s" : ""}`].filter(Boolean).join(" ");
+  };
+
+  const g = D.careerGlance;
+  $("#glance").innerHTML = `
+    <div class="glance-block"><p class="glance-label">Career path</p>
+      <ol class="path">${g.path.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></div>
+    <div class="glance-block"><p class="glance-label">Industries</p>
+      <div class="tags">${g.industries.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</div></div>`;
+
+  const projTitle = (id) => (D.projects.find((p) => p.id === id) || {}).title;
+  tl.insertAdjacentHTML("beforeend", D.experience.map((j, i) => {
+    const current = !j.end;
+    const projects = (j.projects || []).filter(projTitle);
+    return `
+    <li class="job reveal${current ? " current" : ""}">
+      <article class="job-card" data-open="${i === 0}">
+        <button class="job-head" aria-expanded="${i === 0}" aria-controls="job-${i}">
+          <div class="job-title">
+            <p class="job-focus">${esc(j.focus)}</p>
+            <h3>${esc(j.role)}</h3>
+            <p class="co">${esc(j.company)}</p>
+          </div>
+          <div class="job-when">
+            ${current ? `<span class="now"><span class="dot"></span>Current</span>` : ""}
+            <span class="when">${fmtYM(j.start)} – ${fmtYM(j.end)}</span>
+            <span class="dur">${duration(j.start, j.end)}</span>
+          </div>
         </button>
-        <div class="job-body"><div>
-          <ul>${j.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
-          <div class="tags">${j.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+        <p class="job-summary">${esc(j.summary)}</p>
+        <ul class="facts">${j.facts.map((f) => `<li><strong>${esc(f.value)}</strong><span>${esc(f.label)}</span></li>`).join("")}</ul>
+        <div class="job-body" id="job-${i}"><div>
+          <div class="groups">${j.groups.map((gr) => `
+            <section class="group"><h4>${esc(gr.title)}</h4>
+              <ul>${gr.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+            </section>`).join("")}</div>
+          ${projects.length ? `<div class="job-projects"><h4>Related work</h4><div class="proj-links">${projects.map((id) =>
+            `<button class="proj-link" data-project="${id}">${esc(projTitle(id))} <span aria-hidden="true">↗</span></button>`).join("")}</div></div>` : ""}
+          <div class="job-stack"><h4>Stack</h4><div class="tags">${j.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>
         </div></div>
-      </div>
-    </li>`).join(""));
+        <button class="job-toggle" aria-controls="job-${i}"><span>${i === 0 ? "Show less" : "Show details"}</span>
+          <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      </article>
+    </li>`;
+  }).join(""));
+
+  function setJob(card, open) {
+    card.dataset.open = open;
+    $(".job-head", card).setAttribute("aria-expanded", open);
+    $(".job-toggle span", card).textContent = open ? "Show less" : "Show details";
+  }
+  function syncExpandAll() {
+    const all = $$(".job-card", tl).every((c) => c.dataset.open === "true");
+    const b = $("#expand-all");
+    b.textContent = all ? "Collapse all" : "Expand all";
+    b.setAttribute("aria-pressed", all);
+  }
   tl.addEventListener("click", (e) => {
-    const h = e.target.closest(".job-head"); if (!h) return;
-    const card = h.parentElement, open = card.dataset.open !== "true";
-    card.dataset.open = open; h.setAttribute("aria-expanded", open);
+    const link = e.target.closest(".proj-link");
+    if (link) { openProject(link.dataset.project); return; }
+    const t = e.target.closest(".job-head, .job-toggle"); if (!t) return;
+    const card = t.closest(".job-card");
+    setJob(card, card.dataset.open !== "true");
+    syncExpandAll();
+    setTimeout(timelineProgress, 480);
+  });
+  $("#expand-all").addEventListener("click", () => {
+    const open = !$$(".job-card", tl).every((c) => c.dataset.open === "true");
+    $$(".job-card", tl).forEach((c) => setJob(c, open));
+    syncExpandAll();
+    setTimeout(timelineProgress, 480);
   });
   function timelineProgress() {
     const r = tl.getBoundingClientRect(), vh = innerHeight;
