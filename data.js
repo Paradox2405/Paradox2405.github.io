@@ -86,12 +86,12 @@ window.PORTFOLIO = {
       role: "Senior Software Engineer",
       start: "2024-01",
       end: "2025-06",
-      focus: "Frontend lead · Healthcare",
+      focus: "Frontend lead · Healthcare recruitment",
       summary:
-        "Senior engineer and frontend lead. I streamlined the company's processes end to end to match modern engineering workflows, built a healthcare mobile app from the ground up, raised the bar for the frontend team with reviews, mentoring and CI/CD, and brought in modern React architecture for web projects.",
+        "Senior engineer and frontend lead. I streamlined the company's processes end to end to match modern engineering workflows, led the ground-up rebuild of the MEXXAR Candidate app, was one of the main engineers on the MEXXAR healthcare recruitment CRM, raised the bar for the frontend team with reviews, mentoring and CI/CD, and brought in modern React architecture for web projects.",
       industries: ["Healthcare"],
       facts: [
-        { value: "0 → 1", label: "healthcare app built from scratch" },
+        { value: "530+", label: "commits on the CRM" },
         { value: "Company-wide", label: "processes modernised" },
         { value: "CI/CD", label: "pipelines set up" },
       ],
@@ -103,12 +103,15 @@ window.PORTFOLIO = {
             "Standardised Jira across teams with consistent boards, ticket structure and workflows aligned with industry practice, improving visibility and collaboration between teams.",
             "Made code reviews, enforceable code-quality standards and structured documentation the default way of working.",
             "Set up and ran GitHub Actions CI/CD pipelines, making delivery faster and cutting deployment errors.",
+            "In practice: a team-wide commit message template (issue key, version, description), versioned release builds packaged automatically by the pipeline and deployed to S3, and secrets moved out of the code into environment config.",
           ],
         },
         {
           title: "Product engineering",
           points: [
-            "Led end-to-end development of a healthcare mobile app from the ground up, using an MVC architecture built for scalability, maintainability and performance.",
+            "Led the ground-up V2 rebuild of the MEXXAR Candidate app (Flutter), with an MVC-style module structure built for scalability, maintainability and performance.",
+            "One of the main engineers on the MEXXAR recruitment CRM (React), used by UK healthcare agencies such as Candy Healthcare, with 530+ commits across compliance, bookings, payroll and admin.",
+            "Set up the mobile architecture for a new chauffeur booking product, which the team then built on.",
             "Architected modern React solutions and delivered new features for web and mobile projects as business needs changed.",
             "Improved UI/UX across web and mobile apps for usability, accessibility and visual quality.",
           ],
@@ -121,8 +124,8 @@ window.PORTFOLIO = {
           ],
         },
       ],
-      projects: [],
-      tags: ["Flutter", "React", "MVC", "GitHub Actions", "Jira", "Code review", "Mentoring", "Process design"],
+      projects: ["mexxar-crm", "mexxar-mobile", "chauffeur"],
+      tags: ["React", "Redux", "Flutter", "GetX", "MVC", "GitHub Actions", "AWS S3", "Jira", "Code review", "Mentoring", "Process design"],
     },
     {
       company: "Flexiata PTY Ltd.",

@@ -167,7 +167,7 @@
   }
 
   const lock = `<svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="currentColor"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>`;
-  const kindLabel = { client: "Client", nda: "Under NDA", personal: "Personal", university: "University" };
+  const kindLabel = { client: "Client", work: "Company product", nda: "Under NDA", personal: "Personal", university: "University" };
   const typeLabel = { web: "Web", mobile: "Mobile", iot: "IoT" };
 
   function cover(p, big = false) {
@@ -189,7 +189,7 @@
     { id: "web", label: "Web", test: (p) => p.type === "web" },
     { id: "mobile", label: "Mobile", test: (p) => p.type === "mobile" },
     { id: "iot", label: "IoT", test: (p) => p.type === "iot" },
-    { id: "client", label: "Client", test: (p) => p.kind === "client" },
+    { id: "client", label: "Client & company", test: (p) => p.kind === "client" || p.kind === "work" },
     { id: "nda", label: "Under NDA", test: (p) => p.kind === "nda" },
     { id: "side", label: "Personal & uni", test: (p) => p.kind === "personal" || p.kind === "university" },
   ];
