@@ -8,7 +8,7 @@ window.PORTFOLIO = {
     pitch:
       "I build scalable, secure and fast web and mobile apps. I started in Flutter and native mobile, and now architect React and Next.js platforms in monorepos for healthcare, construction, events and retail.",
     about: [
-      "I'm a software engineer with five years of shipping products for clients in Sri Lanka, the UK, Australia and the UAE. I started as an intern at Calico in 2019, then built mobile apps with Flutter, Kotlin and Java, and these days most of my work is React and Next.js inside monorepos, built from shared, modular components (Atomic Design).",
+      "I'm a software engineer with five years of shipping products for clients in Sri Lanka, the UK, Australia and the UAE. I started out building mobile apps with Flutter, Kotlin and Java, and these days most of my work is React and Next.js inside monorepos, built from shared, modular components (Atomic Design).",
       "Beyond features, I care about architecture, frontend performance, CI/CD and AI-driven workflows that take real work off people's plates. I hold a high bar for code quality, documentation and information security, and I like teams where long-term maintainability matters as much as the next release.",
       "Outside code I'm a freelance designer, photographer and compère. That's where my eye for UI comes from. I've also led teams for years: I chaired the IEEE Student Branch at NSBM Green University, founded its Duothan hackathon, and led teams in IEEE Sri Lanka Section programmes. I also enjoy teaching: in 2023 I led the Flutter sessions of \"Flutter Unleashed\", a hands-on Flutter and Firebase workshop for undergraduates at KDU.",
     ],
