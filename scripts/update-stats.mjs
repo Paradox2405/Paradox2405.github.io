@@ -27,6 +27,17 @@ const wakatime = await attempt("wakatime", async () => {
   };
 });
 
+// Weekly rank on WakaTime's public Sri Lanka leaderboard (snapshot at update time).
+const wakatimeRank = await attempt("wakatimeRank", async () => {
+  for (let page = 1; page <= 5; page++) {
+    const res = await get(`https://wakatime.com/api/v1/leaders?country_code=LK&page=${page}`);
+    const me = res.data.find((d) => /^Paradox2405$/i.test(d.user.username || ""));
+    if (me) return { rank: me.rank, week: res.range.end_date };
+    if (page >= res.total_pages) break;
+  }
+  throw new Error("not on the leaderboard");
+});
+
 const github = await attempt("github", async () => {
   const user = await get("https://api.github.com/users/Paradox2405");
   const repos = await get("https://api.github.com/users/Paradox2405/repos?per_page=100&type=owner");
@@ -43,7 +54,7 @@ const stackoverflow = await attempt("stackoverflow", async () => {
   return { reputation: u.reputation, gold: u.badge_counts.gold, silver: u.badge_counts.silver, bronze: u.badge_counts.bronze };
 });
 
-const stats = { updatedAt: new Date().toISOString().slice(0, 10), wakatime, github, stackoverflow };
+const stats = { updatedAt: new Date().toISOString().slice(0, 10), wakatime, wakatimeRank, github, stackoverflow };
 await writeFile(OUT, JSON.stringify(stats, null, 2) + "\n");
 await writeFile(new URL("../assets/github-card.svg", import.meta.url), card(stats));
 console.log(JSON.stringify(stats));

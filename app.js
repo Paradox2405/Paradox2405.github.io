@@ -52,6 +52,7 @@
           <p class="glance-label">WakaTime · all time</p>
           <p class="num-big"><strong data-count="${w.hours}" data-suffix=" hrs">0 hrs</strong></p>
           <p class="num-sub">coding time tracked · ${esc(w.dailyAverage)} daily average</p>
+          ${live.wakatimeRank ? `<a class="num-rank" href="https://wakatime.com/leaders?country_code=LK" target="_blank" rel="noopener">#${esc(live.wakatimeRank.rank)} in Sri Lanka on WakaTime's weekly leaderboard ↗</a>` : ""}
           <ul class="langs">${w.languages.map((l) => `
             <li><span class="lang-name">${esc(l.name)}</span>
               <span class="lang-bar"><span style="--w:${l.percent}%"></span></span>
@@ -466,6 +467,7 @@
   /* ---------- about / education / community ---------- */
   $("#about-text").innerHTML = D.person.about.map((p) => `<p>${esc(p)}</p>`).join("");
   $("#education").innerHTML = D.education.map((e) => `<li><strong>${esc(e.school)}</strong><span>${esc(e.detail)}</span><em>${esc(e.period)}</em></li>`).join("");
+  $("#quotes").innerHTML = (D.testimonials || []).map((t) => `<figure class="quote"><blockquote>“${esc(t.quote)}”</blockquote><figcaption><strong>${esc(t.name)}</strong><span>${esc(t.role)}</span></figcaption></figure>`).join("");
   $("#community").innerHTML = D.community.map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span>${c.url ? `<a class="talk-link" href="${c.url}" target="_blank" rel="noopener">${esc(c.linkLabel || "Read more ↗")}</a>` : ""}</li>`).join("");
   $("#talks").innerHTML = (D.talks || []).map((c) => `<li class="${c.highlight ? "talk-hl" : ""}">${c.highlight ? `<em class="hl-badge">Featured talk</em>` : ""}<strong>${esc(c.title)}</strong><span>${esc(c.text)}</span>${c.url ? `<a class="talk-link" href="${c.url}" target="_blank" rel="noopener">Read the article ↗</a>` : ""}</li>`).join("");
 

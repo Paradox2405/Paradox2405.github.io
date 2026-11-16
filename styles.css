@@ -499,3 +499,13 @@ a.num-card:hover { border-color: var(--line-strong); transform: translateY(-2px)
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* WakaTime rank + testimonials */
+.num-rank { display: inline-block; margin-top: 10px; font-size: 0.85rem; color: var(--accent-2); text-decoration: none; }
+.num-rank:hover { text-decoration: underline; }
+.quotes { margin-top: 48px; }
+.quote-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.quote { margin: 0; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+.quote blockquote { margin: 0; color: var(--text); font-size: 0.95rem; line-height: 1.6; }
+.quote figcaption { display: flex; flex-direction: column; gap: 2px; padding-top: 12px; border-top: 1px solid var(--line); }
+.quote figcaption span { color: var(--muted); font-size: 0.82rem; }

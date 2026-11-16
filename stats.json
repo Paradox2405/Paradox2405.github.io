@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-16",
   "wakatime": {
-    "hours": 2697,
-    "dailyAverage": "2 hrs 17 mins",
+    "hours": 2715,
+    "dailyAverage": "2 hrs 18 mins",
     "languages": [
       {
         "name": "Dart",
-        "percent": 51
+        "percent": 50
       },
       {
         "name": "TypeScript",
@@ -25,6 +25,10 @@
         "percent": 1
       }
     ]
+  },
+  "wakatimeRank": {
+    "rank": 12,
+    "week": "2026-11-15"
   },
   "github": {
     "repos": 59,

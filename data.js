@@ -44,6 +44,7 @@ window.PORTFOLIO = {
         { name: "Java", percent: 1 },
       ],
     },
+    wakatimeRank: { rank: 12, week: "2026-11-15" },
     github: { repos: 59, followers: 99, stars: 14 },
     stackoverflow: { reputation: 449, gold: 0, silver: 4, bronze: 13 },
   },
@@ -257,6 +258,24 @@ window.PORTFOLIO = {
       text: "Worked on the production team of Achari, a 23-minute Sinhala short film by Dhisal Kapuge (The Basement Studios) about a monk teaching at a rural school in Sri Lanka.",
       url: "https://www.imdb.com/title/tt36679833/",
       linkLabel: "View on IMDb ↗",
+    },
+  ],
+
+  testimonials: [
+    {
+      quote: "He initially joined as a Mobile Software Engineer, where he quickly proved his leadership capabilities by building and leading the mobile team. His expertise, dedication, and natural leadership skills led to his appointment as the Frontend Team Lead, where he successfully mentored, trained, and guided both the mobile and frontend teams.",
+      name: "Angelo Perera",
+      role: "Technical Lead Engineer · managed Denver directly",
+    },
+    {
+      quote: "Denver has a deep understanding of front-end architectures, allowing it to design scalable solutions that enhance performance and maintainability. As a team leader, Denver excels in managing and mentoring developers, fostering a collaborative environment that encourages innovation.",
+      name: "Isuru De Silva",
+      role: "Full Stack Engineer · worked on the same team",
+    },
+    {
+      quote: "Denver is a highly skilled and dedicated Software Engineer with expertise in Flutter. He is a great team player, innovative, and always delivers high-quality work.",
+      name: "Rajith Malinda",
+      role: "Co-Founder, Flexiata · managed Denver directly",
     },
   ],
 
