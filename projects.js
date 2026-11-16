@@ -285,9 +285,11 @@ window.PORTFOLIO.projects = [
       "Twilio Voice SDK for in-browser calling, STOMP over WebSockets for chat, Chart.js dashboards, react-big-calendar, PDF and Excel export (jsPDF, SheetJS).",
       "GitHub Actions release pipeline with S3 deployment; Firebase Hosting for environments.",
     ],
-    outcome: "In production with UK healthcare recruitment agencies, including Candy Healthcare.",
+    outcome: "In production with UK healthcare recruitment agencies, including Candy Healthcare and Hansen & Grey.",
     stack: ["React", "Redux", "Bootstrap", "Azure MSAL", "Twilio", "WebSockets", "GitHub Actions", "AWS S3"],
+    image: "assets/shots/mexxar-crm.jpg",
     links: [
+      { label: "MEXXAR website", url: "https://www.mexxar.co.uk/" },
       { label: "Candy Healthcare (client)", url: "https://candyhealthcare.co.uk/" },
       { label: "MEXXAR on LinkedIn", url: "https://www.linkedin.com/posts/mexxar_healthcarerecruitment-recruitmentagency-nhs-activity-7525459952900149248-OoR8" },
     ],

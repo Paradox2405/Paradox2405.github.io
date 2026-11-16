@@ -10,7 +10,7 @@ window.PORTFOLIO = {
     about: [
       "I'm a software engineer with five years of shipping products for clients in Sri Lanka, the UK, Australia and the UAE. I started out building mobile apps with Flutter, Kotlin and Java, and these days most of my work is React and Next.js inside monorepos, built from shared, modular components (Atomic Design).",
       "Beyond features, I care about architecture, frontend performance, CI/CD and AI-driven workflows that take real work off people's plates. I hold a high bar for code quality, documentation and information security, and I like teams where long-term maintainability matters as much as the next release.",
-      "Outside code I'm a freelance designer, photographer and compère. That's where my eye for UI comes from. I've also led teams for years: I chaired the IEEE Student Branch at NSBM Green University, founded its Duothan hackathon, and led teams in IEEE Sri Lanka Section programmes. I also enjoy teaching: in 2023 I led the Flutter sessions of \"Flutter Unleashed\", a hands-on Flutter and Firebase workshop for undergraduates at KDU.",
+      "Outside code I'm a freelance designer, photographer and video editor. That's where my eye for UI comes from. I was also assistant production manager on the Sri Lankan short film \"Achari\" (2025). I've also led teams for years: I chaired the IEEE Student Branch at NSBM Green University, founded its Duothan hackathon, and led teams in IEEE Sri Lanka Section programmes. I also enjoy teaching: in 2023 I led the Flutter sessions of \"Flutter Unleashed\", a hands-on Flutter and Firebase workshop for undergraduates at KDU.",
     ],
     // Assembled at runtime to keep it away from simple scrapers.
     emailParts: ["denvershenal2405", "gmail.com"],
@@ -232,7 +232,7 @@ window.PORTFOLIO = {
     { group: "Mobile", items: ["Flutter", "Dart", "Kotlin", "Java", "BLoC", "GetX", "Provider"] },
     { group: "Backend & data", items: ["Node.js", "NestJS", "Fastify", "Express", "PostgreSQL", "Prisma", "Firebase", "Laravel"] },
     { group: "Cloud & DevOps", items: ["AWS", "GCP", "Azure", "Vercel", "GitHub Actions", "Docker", "Terraform", "Turborepo"] },
-    { group: "Also", items: ["Bluetooth LE", "IoT", "Playwright", "AI features", "Atomic Design", "Agile", "Jira"] },
+    { group: "Also", items: ["Bluetooth LE", "IoT", "Playwright", "AI features", "Atomic Design", "Agile", "Jira", "Video editing"] },
   ],
 
   community: [
@@ -251,6 +251,12 @@ window.PORTFOLIO = {
     {
       title: "Earlier leadership",
       text: "Community Service Director, Rotaract Club of Katugastota; President, American Corner Youth Forum, Kandy; President of the ICT and Photographic Societies at Trinity College.",
+    },
+    {
+      title: "Assistant Production Manager, \"Achari\" (2025)",
+      text: "Worked on the production team of Achari, a 23-minute Sinhala short film by Dhisal Kapuge (The Basement Studios) about a monk teaching at a rural school in Sri Lanka.",
+      url: "https://www.imdb.com/title/tt36679833/",
+      linkLabel: "View on IMDb ↗",
     },
   ],
 
@@ -277,6 +283,6 @@ window.PORTFOLIO = {
 
   education: [
     { school: "University of Plymouth, UK", detail: "BSc (Hons) Software Engineering, Second Class Upper Division. Delivered at NSBM Green University. Coursework included algorithms and data structures, design patterns, distributed systems, cloud computing, IoT and network security.", period: "Mar 2018 – Jul 2021" },
-    { school: "Trinity College, Kandy", detail: "GCE A/L 2017 (ICT, Economics, Physics) · O/L 2014", period: "2004 – 2017" },
+    { school: "Trinity College, Kandy", detail: "GCE A/L 2017 · O/L 2014", period: "2004 – 2017" },
   ],
 };
