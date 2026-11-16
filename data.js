@@ -255,9 +255,11 @@ window.PORTFOLIO = {
     },
     {
       title: "Assistant Production Manager, \"Achari\" (2025)",
-      text: "Worked on the production team of Achari, a 23-minute Sinhala short film by Dhisal Kapuge (The Basement Studios) about a monk teaching at a rural school in Sri Lanka.",
-      url: "https://www.imdb.com/title/tt36679833/",
-      linkLabel: "View on IMDb ↗",
+      text: "Worked on the production team of Achari – The Teacher, a 23-minute Sinhala short film by Dhisal Kapuge (The Basement Studios) inspired by the true story of a monk teaching at a rural school in Sri Lanka. Official selection at FerFILM Festival, Short to the Point, Taoba International Youth Film Festival and Bengaluru International Short Film Festival (2025).",
+      links: [
+        { label: "Watch the film ↗", url: "https://www.youtube.com/watch?v=P_RVtEz9qsM" },
+        { label: "IMDb ↗", url: "https://www.imdb.com/title/tt36679833/" },
+      ],
     },
   ],
 

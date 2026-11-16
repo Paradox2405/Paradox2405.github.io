@@ -468,7 +468,7 @@
   $("#about-text").innerHTML = D.person.about.map((p) => `<p>${esc(p)}</p>`).join("");
   $("#education").innerHTML = D.education.map((e) => `<li><strong>${esc(e.school)}</strong><span>${esc(e.detail)}</span><em>${esc(e.period)}</em></li>`).join("");
   $("#quotes").innerHTML = (D.testimonials || []).map((t) => `<figure class="quote"><blockquote>“${esc(t.quote)}”</blockquote><figcaption><strong>${esc(t.name)}</strong><span>${esc(t.role)}</span></figcaption></figure>`).join("");
-  $("#community").innerHTML = D.community.map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span>${c.url ? `<a class="talk-link" href="${c.url}" target="_blank" rel="noopener">${esc(c.linkLabel || "Read more ↗")}</a>` : ""}</li>`).join("");
+  $("#community").innerHTML = D.community.map((c) => `<li><strong>${esc(c.title)}</strong><span>${esc(c.text)}</span>${(c.links || []).map((l) => `<a class="talk-link" href="${l.url}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(" ")}</li>`).join("");
   $("#talks").innerHTML = (D.talks || []).map((c) => `<li class="${c.highlight ? "talk-hl" : ""}">${c.highlight ? `<em class="hl-badge">Featured talk</em>` : ""}<strong>${esc(c.title)}</strong><span>${esc(c.text)}</span>${c.url ? `<a class="talk-link" href="${c.url}" target="_blank" rel="noopener">Read the article ↗</a>` : ""}</li>`).join("");
 
   /* ---------- contact ---------- */

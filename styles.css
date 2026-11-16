@@ -509,3 +509,4 @@ a.num-card:hover { border-color: var(--line-strong); transform: translateY(-2px)
 .quote blockquote { margin: 0; color: var(--text); font-size: 0.95rem; line-height: 1.6; }
 .quote figcaption { display: flex; flex-direction: column; gap: 2px; padding-top: 12px; border-top: 1px solid var(--line); }
 .quote figcaption span { color: var(--muted); font-size: 0.82rem; }
+.talk-link + .talk-link { margin-left: 14px; }
