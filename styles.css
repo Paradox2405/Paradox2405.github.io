@@ -169,7 +169,8 @@ kbd {
 .lead { color: var(--muted); margin-top: 14px; max-width: 620px; font-size: 1.05rem; }
 
 /* toolbar */
-.toolbar { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.toolbar { display: flex; flex-direction: column; gap: 14px; align-items: stretch; margin-bottom: 10px; }
+.toolbar .search { flex: none; width: 100%; max-width: 520px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   border: 1px solid var(--line); background: var(--surface); color: var(--muted);

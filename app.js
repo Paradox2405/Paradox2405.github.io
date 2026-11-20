@@ -519,7 +519,6 @@
   function onScroll() {
     const y = scrollY;
     nav.classList.toggle("scrolled", y > 20);
-    nav.classList.toggle("hidden", y > lastY && y > 400 && $("#palette").hidden);
     lastY = y;
     let current = null;
     for (const s of sections) if (s.getBoundingClientRect().top < innerHeight * 0.4) current = s.id;
